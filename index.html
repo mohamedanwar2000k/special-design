@@ -1,0 +1,487 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Special Design</title>
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wdth,wght@0,75..100,300..800;1,75..100,300..800&display=swap"
+    rel="stylesheet" />
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css"
+    integrity="sha512-5Hs3dF2AEPkpNAR7UiOHba+lRSJNeM2ECkwxUIxC1Q/FLycGTbNapWXB4tP889k5T5Ju8fs4b1P5z/iB4nMfSQ=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <!-- AOS Library -->
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <!-- Compilet Tailwind CSS File -->
+  <link rel="stylesheet" href="css/dist/output.css" />
+  <!-- Control With JS -->
+  <link rel="stylesheet" href="css/dist/control-JS.css" />
+</head>
+
+<body class="font-open-sans">
+  <!-- Start Settings Box -->
+  <div class="fixed top-0 left-[-200px] z-50 bg-white w-[200px] min-h-screen transition-all duration-300 shadow-2xl"
+    id="settingsBox">
+    <div
+      class="absolute top-[100px] -right-[35px] bg-white w-[35px] h-[35px] cursor-pointer flex justify-center items-center shadow-xl"
+      id="gearButton">
+      <i class="fa-solid fa-gear"></i>
+    </div>
+    <div>
+      <div class="p-3 m-3 bg-[#eee] text-center">
+        <h4 class="text-[#666] font-bold mb-3">Colors</h4>
+        <ul class="colors-list flex justify-center items-center gap-2">
+          <li class="active bg-amber-500 rounded-full cursor-pointer w-5 h-5 transition" data-color="#F59E0B"></li>
+          <li class="bg-rose-500 rounded-full cursor-pointer w-5 h-5 transition" data-color="#F43F5E"></li>
+          <li class="bg-emerald-500 rounded-full cursor-pointer w-5 h-5 transition" data-color="#10B981"></li>
+          <li class="bg-sky-500 rounded-full cursor-pointer w-5 h-5 transition" data-color="#0EA5E9"></li>
+          <li class="bg-green-500 rounded-full cursor-pointer w-5 h-5 transition" data-color="#22C55E"></li>
+        </ul>
+      </div>
+      <div class="p-3 m-3 bg-[#eee] text-center" id="randomBackgrounds">
+        <h4 class="text-[#666] font-bold mb-3">Random Backgrounds</h4>
+        <div class="active mx-auto w-12 p-[3px] bg-[#ccc] rounded-full cursor-pointer transition duration-300">
+          <span class="block w-4 h-4 bg-white rounded-full translate-x-[26px] transition duration-300"></span>
+        </div>
+      </div>
+      <div class="p-3 m-3 bg-[#eee] text-center" id="showBullets">
+        <h4 class="text-[#666] font-bold mb-3">Show Bullets</h4>
+        <div class="active mx-auto w-12 p-[3px] bg-[#ccc] rounded-full cursor-pointer transition duration-300">
+          <span class="block w-4 h-4 bg-white rounded-full translate-x-[26px] transition duration-300"></span>
+        </div>
+      </div>
+      <button class="block bg-[#F44336] my-3 mx-auto w-[178px] text-white font-bold py-3 rounded" id="resetOptionsBtn">
+        Reset Options
+      </button>
+    </div>
+  </div>
+  <!-- Ent Settings Box -->
+  <!-- Start Nav Bullets -->
+  <div class="fixed right-0 top-1/2 -translate-y-1/2 w-10 z-30" id="navBullets">
+    <div class="bullet w-5 h-5 border-[3px] rounded-full my-5 mx-auto cursor-pointer relative transition duration-300"
+      data-section="aboutUs">
+      <div class="tooltip w-[120px] text-white py-2 px-[10px] absolute top-1/2 -translate-y-1/2 right-8 text-center">
+        About Us
+      </div>
+    </div>
+    <div class="bullet w-5 h-5 border-[3px] rounded-full my-5 mx-auto cursor-pointer relative transition duration-300"
+      data-section="ourSkills">
+      <div class="tooltip w-[120px] text-white py-2 px-[10px] absolute top-1/2 -translate-y-1/2 right-8 text-center">
+        Our Skills
+      </div>
+    </div>
+    <div class="bullet w-5 h-5 border-[3px] rounded-full my-5 mx-auto cursor-pointer relative transition duration-300"
+      data-section="gallery">
+      <div class="tooltip w-[120px] text-white py-2 px-[10px] absolute top-1/2 -translate-y-1/2 right-8 text-center">
+        Our Gallery
+      </div>
+    </div>
+    <div class="bullet w-5 h-5 border-[3px] rounded-full my-5 mx-auto cursor-pointer relative transition duration-300"
+      data-section="timeline">
+      <div class="tooltip w-[120px] text-white py-2 px-[10px] absolute top-1/2 -translate-y-1/2 right-8 text-center">
+        Timeline
+      </div>
+    </div>
+    <div class="bullet w-5 h-5 border-[3px] rounded-full my-5 mx-auto cursor-pointer relative transition duration-300"
+      data-section="features">
+      <div class="tooltip w-[120px] text-white py-2 px-[10px] absolute top-1/2 -translate-y-1/2 right-8 text-center">
+        Features
+      </div>
+    </div>
+    <div class="bullet w-5 h-5 border-[3px] rounded-full my-5 mx-auto cursor-pointer relative transition duration-300"
+      data-section="testimonials">
+      <div class="tooltip w-[120px] text-white py-2 px-[10px] absolute top-1/2 -translate-y-1/2 right-8 text-center">
+        Testimonials
+      </div>
+    </div>
+  </div>
+  <!-- End Nav Bullets -->
+  <!-- Start Landing Page -->
+  <div id="landingPage" class="bg-landing-1 min-h-screen bg-no-repeat bg-cover relative text-white overflow-hidden">
+    <div class="absolute bg-[#0000009c] inset-0 z-10"></div>
+    <div class="container">
+      <header class="z-40 relative flex justify-between items-center py-6">
+        <div class="font-bold text-xl">Special Design</div>
+        <div class="relative">
+          <div class="w-6 space-y-2 cursor-pointer md:hidden" id="navToggle">
+            <span class="block w-full h-[2px] bg-white transition duration-300"></span>
+            <span class="block w-full h-[2px] bg-white transition duration-300"></span>
+            <span class="block w-full h-[2px] bg-white transition duration-300"></span>
+          </div>
+          <ul
+            class="nav md:gap-4 flex-col md:flex-row absolute md:static top-8 right-0 w-40 md:w-fit bg-white md:bg-transparent rounded-md hidden md:flex">
+            <li class="border-b md:border-none">
+              <a href="#" class="transition duration-300 font-bold md:font-normal block p-3 md:p-0"
+                data-section="aboutUs">About</a>
+            </li>
+            <li class="border-b md:border-none">
+              <a href="#" class="transition duration-300 font-bold md:font-normal block p-3 md:p-0"
+                data-section="ourSkills">Skills</a>
+            </li>
+            <li class="border-b md:border-none">
+              <a href="#" class="transition duration-300 font-bold md:font-normal block p-3 md:p-0"
+                data-section="gallery">Gallery</a>
+            </li>
+            <li class="border-b md:border-none">
+              <a href="#" class="transition duration-300 font-bold md:font-normal block p-3 md:p-0"
+                data-section="timeline">Timeline</a>
+            </li>
+            <li class="border-b md:border-none">
+              <a href="#" class="transition duration-300 font-bold md:font-normal block p-3 md:p-0"
+                data-section="features">Features</a>
+            </li>
+            <li>
+              <a href="#" class="transition duration-300 font-bold md:font-normal block p-3 md:p-0"
+                data-section="testimonials">Testimonials</a>
+            </li>
+          </ul>
+        </div>
+      </header>
+      <div
+        class="landing absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-20 text-center w-full md:w-4/5 px-4">
+        <h1 class="text-3xl sm:text-4xl font-bold mb-4" data-aos="fade-right" data-aos-duration="1500">
+          We Are <span class="transition duration-300">Creative</span> Agency
+        </h1>
+        <p class="leading-normal text-xl mx-auto" data-aos="fade-left" data-aos-duration="1500">
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae
+          tenetur quisquam ullam repellendus quibusdam tempore.
+        </p>
+      </div>
+    </div>
+  </div>
+  <!-- End Landing Page -->
+  <!-- Start About Us -->
+  <div class="py-20 overflow-hidden" id="aboutUs">
+    <div class="container flex items-center flex-col md:flex-row text-center md:text-start">
+      <div class="flex-1" data-aos="fade-right" data-aos-duration="1500">
+        <h2 class="font-bold text-3xl transition duration-300 mb-3">
+          About Us
+        </h2>
+        <p class="leading-[1.8] text-[#767676] mb-8 md:mb-0">
+          Lorem ipsum, dolor sit amet consectetur adipisicing elit. Porro,
+          corrupti! Quae at a asperiores sed tenetur corporis modi cupiditate
+          voluptatibus, porro rem id adipisci, maxime ratione aspernatur?
+          Labore, laboriosam impedit?
+        </p>
+      </div>
+      <div class="flex-1" data-aos="fade-left" data-aos-duration="1500" data-aos-delay="500">
+        <img class="w-64 md:w-80 rounded-full mx-auto" src="imgs/About Us.jpg" alt="" />
+      </div>
+    </div>
+  </div>
+  <!-- End About Us -->
+  <!-- Start Our Skills -->
+  <div class="py-14 bg-[#eee]" id="ourSkills">
+    <div class="container">
+      <h2 class="text-center font-bold text-3xl transition duration-300 mb-10">
+        Our Skills
+      </h2>
+      <div class="space-y-4">
+        <div class="progress-box bg-white flex items-center flex-col md:flex-row p-4">
+          <div class="font-bold w-36 text-center mb-4 md:mb-0">HTML</div>
+          <div class="w-full h-8 bg-[#f6f6f6] rounded-md relative overflow-hidden">
+            <span class="absolute left-0 top-0 w-0 h-full transition-all duration-[2s]" data-progress="80%"></span>
+          </div>
+        </div>
+        <div class="progress-box bg-white flex items-center flex-col md:flex-row p-4">
+          <div class="font-bold w-36 text-center mb-4 md:mb-0">CSS</div>
+          <div class="w-full h-8 bg-[#f6f6f6] rounded-md relative overflow-hidden">
+            <span class="absolute left-0 top-0 w-0 h-full transition-all duration-[2s]" data-progress="70%"></span>
+          </div>
+        </div>
+        <div class="progress-box bg-white flex items-center flex-col md:flex-row p-4">
+          <div class="font-bold w-36 text-center mb-4 md:mb-0">Javascript</div>
+          <div class="w-full h-8 bg-[#f6f6f6] rounded-md relative overflow-hidden">
+            <span class="absolute left-0 top-0 w-0 h-full transition-all duration-[2s]" data-progress="90%"></span>
+          </div>
+        </div>
+        <div class="progress-box bg-white flex items-center flex-col md:flex-row p-4">
+          <div class="font-bold w-36 text-center mb-4 md:mb-0">Python</div>
+          <div class="w-full h-8 bg-[#f6f6f6] rounded-md relative overflow-hidden">
+            <span class="absolute left-0 top-0 w-0 h-full transition-all duration-[2s]" data-progress="80%"></span>
+          </div>
+        </div>
+        <div class="progress-box bg-white flex items-center flex-col md:flex-row p-4">
+          <div class="font-bold w-36 text-center mb-4 md:mb-0">PHP</div>
+          <div class="w-full h-8 bg-[#f6f6f6] rounded-md relative overflow-hidden">
+            <span class="absolute left-0 top-0 w-0 h-full transition-all duration-[2s]" data-progress="90%"></span>
+          </div>
+        </div>
+        <div class="progress-box bg-white flex items-center flex-col md:flex-row p-4">
+          <div class="font-bold w-36 text-center mb-4 md:mb-0">MySQL</div>
+          <div class="w-full h-8 bg-[#f6f6f6] rounded-md relative overflow-hidden">
+            <span class="absolute left-0 top-0 w-0 h-full transition-all duration-[2s]" data-progress="70%"></span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- End Our Skills -->
+  <!-- Start Gallery -->
+  <div class="py-14" id="gallery">
+    <div class="container">
+      <h2 class="font-bold text-3xl transition duration-300 text-center mb-10">
+        Our Gallery
+      </h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-4" data-aos="fade-up"
+        data-aos-duration="1500">
+        <img class="p-1 bg-[#f6f6f6] border border-[#ccc] cursor-pointer" src="imgs/01.jpg" alt="Image One" />
+        <img class="p-1 bg-[#f6f6f6] border border-[#ccc] cursor-pointer" src="imgs/02.jpg" alt="Image Two" />
+        <img class="p-1 bg-[#f6f6f6] border border-[#ccc] cursor-pointer" src="imgs/03.jpg" alt="Image Three" />
+        <img class="p-1 bg-[#f6f6f6] border border-[#ccc] cursor-pointer" src="imgs/04.jpg" alt="Image Four" />
+        <img class="p-1 bg-[#f6f6f6] border border-[#ccc] cursor-pointer" src="imgs/05.jpg" alt="Image Five" />
+        <img class="p-1 bg-[#f6f6f6] border border-[#ccc] cursor-pointer" src="imgs/06.png" alt="Image Six" />
+        <img class="p-1 bg-[#f6f6f6] border border-[#ccc] cursor-pointer" src="imgs/07.jpg" alt="Image Seven" />
+        <img class="p-1 bg-[#f6f6f6] border border-[#ccc] cursor-pointer" src="imgs/08.jpg" alt="Image Eight" />
+        <img class="p-1 bg-[#f6f6f6] border border-[#ccc] cursor-pointer" src="imgs/09.jpg" alt="Image Nine" />
+        <img class="p-1 bg-[#f6f6f6] border border-[#ccc] cursor-pointer" src="imgs/10.jpg" alt="Image Ten" />
+      </div>
+    </div>
+  </div>
+  <!-- End Gallery -->
+  <!-- Start Timeline -->
+  <div class="py-14 bg-[#eee] overflow-hidden" id="timeline">
+    <div class="container">
+      <div
+        class="timeline-content relative before:absolute before:w-[2px] before:h-full before:top-0 before:left-1/2 -before:translate-x-1/2 before:transition before:duration-300">
+        <div
+          class="year mx-auto w-fit text-center px-2 rounded text-white font-bold transition duration-300 z-10 relative top-5">
+          2018
+        </div>
+        <div
+          class="left md:w-[calc(50%-25px)] my-10 relative before:absolute before:top-5 before:right-[-36px] before:w-5 before:h-5 before:rounded-full before:bg-white before:border-[3px] float-start before:transition before:duration-300 before:hidden md:before:block">
+          <div class="content p-5 bg-white before:hidden md:before:block" data-aos="fade-right"
+            data-aos-duration="1500">
+            <h3 class="font-bold mb-2 text-xl transition duration-300">Testing Heading</h3>
+            <p class="text-[#666] leading-relaxed">
+              Lorem, ipsum dolor sit amet consectetur adipisicing elit. Fugit
+              laboriosam, itaque doloremque natus dolorem nesciunt saepe! Aut
+              voluptas, magni laborum distinctio illo tempore sit cupiditate
+              quo et maiores fuga placeat.
+            </p>
+          </div>
+        </div>
+        <div class="clearFix"></div>
+        <div
+          class="right md:w-[calc(50%-25px)] mb-10 relative before:absolute before:top-5 before:left-[-34px] before:w-5 before:h-5 before:rounded-full before:bg-white before:border-[3px] float-end before:transition before:duration-300 before:hidden md:before:block">
+          <div class="content p-5 bg-white before:hidden md:before:block" data-aos="fade-left" data-aos-duration="1500">
+            <h3 class="font-bold mb-2 text-xl transition duration-300">Testing Heading</h3>
+            <p class="text-[#666] leading-relaxed">
+              Lorem, ipsum dolor sit amet consectetur adipisicing elit. Fugit
+              laboriosam, itaque doloremque natus dolorem nesciunt saepe! Aut
+              voluptas, magni laborum distinctio illo tempore sit cupiditate
+              quo et maiores fuga placeat.
+            </p>
+          </div>
+        </div>
+        <div class="clearFix"></div>
+        <div
+          class="year mx-auto w-fit text-center px-2 rounded text-white font-bold transition duration-300 z-10 relative top-5">
+          2016
+        </div>
+        <div
+          class="left md:w-[calc(50%-25px)] my-10 relative before:absolute before:top-5 before:right-[-36px] before:w-5 before:h-5 before:rounded-full before:bg-white before:border-[3px] float-start before:transition before:duration-300 before:hidden md:before:block">
+          <div class="content p-5 bg-white before:hidden md:before:block" data-aos="fade-right"
+            data-aos-duration="1500">
+            <h3 class="font-bold mb-2 text-xl transition duration-300">Testing Heading</h3>
+            <p class="text-[#666] leading-relaxed">
+              Lorem, ipsum dolor sit amet consectetur adipisicing elit. Fugit
+              laboriosam, itaque doloremque natus dolorem nesciunt saepe! Aut
+              voluptas, magni laborum distinctio illo tempore sit cupiditate
+              quo et maiores fuga placeat.
+            </p>
+          </div>
+        </div>
+        <div class="clearFix"></div>
+        <div
+          class="left md:w-[calc(50%-25px)] mb-4 md:mb-10 relative before:absolute before:top-5 before:right-[-36px] before:w-5 before:h-5 before:rounded-full before:bg-white before:border-[3px] float-start before:transition before:duration-300 before:hidden md:before:block">
+          <div class="content p-5 bg-white before:hidden md:before:block" data-aos="fade-right"
+            data-aos-duration="1500">
+            <h3 class="font-bold mb-2 text-xl transition duration-300">Testing Heading</h3>
+            <p class="text-[#666] leading-relaxed">
+              Lorem, ipsum dolor sit amet consectetur adipisicing elit. Fugit
+              laboriosam, itaque doloremque natus dolorem nesciunt saepe! Aut
+              voluptas, magni laborum distinctio illo tempore sit cupiditate
+              quo et maiores fuga placeat.
+            </p>
+          </div>
+        </div>
+        <div class="clearFix"></div>
+      </div>
+    </div>
+  </div>
+  <!-- End Timeline -->
+  <!-- Start Features -->
+  <div class="py-20 overflow-hidden" id="features">
+    <h2 class="text-center font-bold text-3xl transition duration-300 mb-16">
+      Our Features
+    </h2>
+    <div class="container grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10">
+      <div class="text-center" data-aos="fade-right" data-aos-duration="1000" data-aos-delay="200">
+        <img class="w-36 mx-auto" src="imgs/programming.svg" alt="" />
+        <h4
+          class="text-xl mt-4 mb-10 font-bold relative before:absolute before:w-10 before:h-1 before:left-1/2 before:-translate-x-1/2 before:-bottom-5 before:transition before:duration-300">
+          Devolopment
+        </h4>
+        <p class="leading-relaxed text-[#706f6f]">
+          We are professional marketeers, we will do anything you imagine in
+          no time.
+        </p>
+      </div>
+      <div class="text-center" data-aos="fade-right" data-aos-duration="1000" data-aos-delay="400">
+        <img class="w-36 mx-auto" src="imgs/advertising.svg" alt="" />
+        <h4
+          class="text-xl mt-4 mb-10 font-bold relative before:absolute before:w-10 before:h-1 before:left-1/2 before:-translate-x-1/2 before:-bottom-5 before:transition before:duration-300">
+          Marketing
+        </h4>
+        <p class="leading-relaxed text-[#706f6f]">
+          We are professional marketeers, we will do anything you imagine in
+          no time.
+        </p>
+      </div>
+      <div class="text-center" data-aos="fade-right" data-aos-duration="1000" data-aos-delay="600">
+        <img class="w-36 mx-auto" src="imgs/hosting-icon.svg" alt="" />
+        <h4
+          class="text-xl mt-4 mb-10 font-bold relative before:absolute before:w-10 before:h-1 before:left-1/2 before:-translate-x-1/2 before:-bottom-5 before:transition before:duration-300">
+          Hosting
+        </h4>
+        <p class="leading-relaxed text-[#706f6f]">
+          We are professional marketeers, we will do anything you imagine in
+          no time.
+        </p>
+      </div>
+      <div class="text-center" data-aos="fade-left" data-aos-duration="1000" data-aos-delay="800">
+        <img class="w-36 mx-auto" src="imgs/mobile-app.svg" alt="" />
+        <h4
+          class="text-xl mt-4 mb-10 font-bold relative before:absolute before:w-10 before:h-1 before:left-1/2 before:-translate-x-1/2 before:-bottom-5 before:transition before:duration-300">
+          Mobile Develope
+        </h4>
+        <p class="leading-relaxed text-[#706f6f]">
+          We are professional marketeers, we will do anything you imagine in
+          no time.
+        </p>
+      </div>
+      <div class="text-center" data-aos="fade-left" data-aos-duration="1000" data-aos-delay="1000">
+        <img class="w-36 mx-auto" src="imgs/graphic-design.svg" alt="" />
+        <h4
+          class="text-xl mt-4 mb-10 font-bold relative before:absolute before:w-10 before:h-1 before:left-1/2 before:-translate-x-1/2 before:-bottom-5 before:transition before:duration-300">
+          Cloud and Servers
+        </h4>
+        <p class="leading-relaxed text-[#706f6f]">
+          We are professional marketeers, we will do anything you imagine in
+          no time.
+        </p>
+      </div>
+      <div class="text-center" data-aos="fade-left" data-aos-duration="1000" data-aos-delay="1200">
+        <img class="w-36 mx-auto" src="imgs/web-design.svg" alt="" />
+        <h4
+          class="text-xl mt-4 mb-10 font-bold relative before:absolute before:w-10 before:h-1 before:left-1/2 before:-translate-x-1/2 before:-bottom-5 before:transition before:duration-300">
+          SEO
+        </h4>
+        <p class="leading-relaxed text-[#706f6f]">
+          We are professional marketeers, we will do anything you imagine in
+          no time.
+        </p>
+      </div>
+    </div>
+  </div>
+  <!-- End Features -->
+  <!-- Start Testimonials -->
+  <div class="py-20 transition-all duration-300 relative" id="testimonials">
+    <div class="background absolute top-0 left-0 w-full h-full flex -z-10">
+      <div class="first flex-1 transition duration-300"></div>
+      <div class="second bg-[#333] flex-1"></div>
+    </div>
+    <div class="container">
+      <h2 class="font-bold text-3xl mb-8 text-white text-center md:text-start">Testimonials</h2>
+      <div class="grid md:grid-cols-3 gap-3">
+        <div class="p-5 bg-white" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="200">
+          <p class="mb-5 leading-normal text-[15px] text-[#707070] italic">
+            Iam very happy with the product its amazing and i recieve it very
+            fast and the price was amazing.
+          </p>
+          <div class="flex flex-col lg:flex-row text-center lg:text-start items-center gap-5">
+            <img class="rounded-full" src="https://placehold.it/80/DDD" alt="" />
+            <div>
+              <div class="font-bold mb-1">Ahmed Mosaad</div>
+              <div class="text-[#707070]">CEO At Company</div>
+            </div>
+          </div>
+        </div>
+        <div class="p-5 bg-white" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="400">
+          <p class="mb-5 leading-normal text-[15px] text-[#707070] italic">
+            Iam very happy with the product its amazing and i recieve it very
+            fast and the price was amazing.
+          </p>
+          <div class="flex flex-col lg:flex-row text-center lg:text-start items-center gap-5">
+            <img class="rounded-full" src="https://placehold.it/80/EEE" alt="" />
+            <div>
+              <div class="font-bold mb-1">Mohamed Ibrahim</div>
+              <div class="text-[#707070]">CEO At Company</div>
+            </div>
+          </div>
+        </div>
+        <div class="p-5 bg-white" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="600">
+          <p class="mb-5 leading-normal text-[15px] text-[#707070] italic">
+            Iam very happy with the product its amazing and i recieve it very
+            fast and the price was amazing.
+          </p>
+          <div class="flex flex-col lg:flex-row text-center lg:text-start items-center gap-5">
+            <img class="rounded-full" src="https://placehold.it/80/AAA" alt="" />
+            <div>
+              <div class="font-bold mb-1">Sherief Ashraf</div>
+              <div class="text-[#707070]">CEO At Company</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- End Testimonials -->
+  <!-- Start Contact Us -->
+  <div class="relative bg-[url('../../imgs/contact.png')] bg-cover py-20" id="contactUs">
+    <div class="absolute left-0 top-0 w-full h-full bg-white opacity-60"></div>
+    <div class="container relative">
+      <h2 class="text-center font-bold text-3xl transition duration-300 mb-16">Contact Us</h2>
+      <form action="" class="flex flex-col md:flex-row gap-4 max-w-[800px] mx-auto" data-aos="flip-left"
+        data-aos-duration="1500">
+        <div class="flex-1 space-y-4">
+          <input type="text" placeholder="Your Name"
+            class="block w-full p-2 border border-[#ccc] bg-[#dadada30] focus:outline-none transition duration-200">
+          <input type="text" placeholder="Your Phone"
+            class="block w-full p-2 border border-[#ccc] bg-[#dadada30] focus:outline-none transition duration-200">
+          <input type="email" placeholder="Your Email"
+            class="block w-full p-2 border border-[#ccc] bg-[#dadada30] focus:outline-none transition duration-200">
+          <input type="text" placeholder="Your Subject"
+            class="block w-full p-2 border border-[#ccc] bg-[#dadada30] focus:outline-none transition duration-200">
+        </div>
+        <div class="flex-1 space-y-4 flex flex-col">
+          <textarea placeholder="Your Message"
+            class="block w-full p-2 border border-[#ccc] bg-[#dadada30] focus:outline-none transition duration-200 h-40 md:h-auto md:flex-1"></textarea>
+          <input type="submit" value="Send"
+            class="block w-full p-2 h-[42px] text-white cursor-pointer transition duration-300">
+        </div>
+      </form>
+    </div>
+  </div>
+  <!-- End Contact Us -->
+  <!-- Start Footer -->
+  <footer class="text-center bg-[#333] text-[#eee] p-5">Created With Love By Mohamed Anwar</footer>
+  <!-- End Footer -->
+
+  <!-- Font Awesome JS -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/js/all.min.js"
+    integrity="sha512-1JkMy1LR9bTo3psH+H4SV5bO2dFylgOy+UJhMus1zF4VEFuZVu5lsi4I6iIndE4N9p01z1554ZDcvMSjMaqCBQ=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <!-- AOS Library JS -->
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <!-- Main JS File -->
+  <script src="js/main.js"></script>
+</body>
+
+</html>

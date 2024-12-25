@@ -1,0 +1,219 @@
+:root {
+  --main-color: #f59e0b;
+}
+.clearFix {
+  clear: both;
+}
+
+/* Start Settings Box */
+#settingsBox.open {
+  left: 0;
+}
+.colors-list li.active {
+  box-shadow: 0 0 0 4px #c8c8c8;
+}
+#randomBackgrounds div.active,
+#showBullets div.active {
+  background-color: var(--main-color);
+}
+#randomBackgrounds div.active span,
+#showBullets div.active span {
+  transform: translateX(0);
+}
+/* End Settings Box */
+
+/* Start Nav Bullets */
+#navBullets .bullet {
+  border-color: var(--main-color);
+}
+#navBullets .bullet .tooltip {
+  background-color: var(--main-color);
+  pointer-events: none;
+  display: none;
+}
+#navBullets .bullet .tooltip::before {
+  content: "";
+  position: absolute;
+  border-style: solid;
+  border-width: 10px;
+  border-color: transparent transparent transparent var(--main-color);
+  height: 0;
+  width: 0;
+  right: -20px;
+  top: 50%;
+  transform: translateY(-50%);
+  transition: 300ms;
+}
+#navBullets .bullet:hover .tooltip {
+  display: block;
+}
+/* End Nav Bullets */
+
+/* Start Landing Page */
+.nav.open {
+  display: flex;
+}
+.nav li a {
+  color: var(--main-color);
+}
+@media (max-width: 767px) {
+  .nav li a:hover {
+    transform: translateX(10px);
+  }
+}
+@media (min-width: 768px) {
+  .nav li a {
+    color: white;
+  }
+  .nav li a:hover {
+    color: var(--main-color);
+  }
+}
+#navToggle.open span:nth-child(1) {
+  transform: translateY(10px) rotate(45deg);
+}
+#navToggle.open span:nth-child(2) {
+  opacity: 0;
+}
+#navToggle.open span:nth-child(3) {
+  transform: translateY(-10px) rotate(-45deg);
+}
+.landing h1 span {
+  color: var(--main-color);
+}
+/* End Landing Page */
+
+/* Start About Us */
+#aboutUs h2 {
+  color: var(--main-color);
+}
+/* End About Us */
+
+/* Start Our Skills */
+#ourSkills h2 {
+  color: var(--main-color);
+}
+#ourSkills .progress-box span {
+  background-color: var(--main-color);
+}
+/* End Our Skills */
+
+/* Start Gallery */
+#gallery h2 {
+  color: var(--main-color);
+}
+.popup-overlay {
+  position: fixed;
+  background-color: rgba(0, 0, 0, 0.7);
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 40;
+}
+.popup-overlay .popup-box {
+  position: relative;
+  width: 70%;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  padding: 20px;
+  border-radius: 6px;
+}
+.popup-overlay .popup-box h3 {
+  font-weight: bold;
+  color: var(--main-color);
+  font-size: 25px;
+  transition: 0.3s;
+  text-align: center;
+  margin-bottom: 15px;
+}
+.popup-overlay .popup-box img {
+  max-width: 100%;
+}
+.popup-overlay .popup-box span {
+  position: absolute;
+  top: 0;
+  right: 0;
+  transform: translate(50%, -50%);
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: var(--main-color);
+  color: #fff;
+  font-size: 20px;
+  font-weight: bold;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+/* End Gallery */
+
+/* Start Timeline */
+#timeline .timeline-content::before {
+  background-color: var(--main-color);
+}
+#timeline .year {
+  background-color: var(--main-color);
+}
+#timeline .left::before,
+#timeline .right::before {
+  border-color: var(--main-color);
+}
+#timeline .left .content::before {
+  content: "";
+  position: absolute;
+  border-style: solid;
+  border-width: 10px;
+  border-color: transparent transparent transparent #fff;
+  height: 0;
+  width: 0;
+  right: -20px;
+  top: 20px;
+}
+#timeline .right .content::before {
+  content: "";
+  position: absolute;
+  border-style: solid;
+  border-width: 10px;
+  border-color: transparent #fff transparent transparent;
+  height: 0;
+  width: 0;
+  left: -20px;
+  top: 20px;
+}
+#timeline h3 {
+  color: var(--main-color);
+}
+/* End Timeline */
+
+/* Start Features */
+#features h2 {
+  color: var(--main-color);
+}
+#features h4::before {
+  background-color: var(--main-color);
+}
+/* End Features */
+
+/* Start Features */
+#testimonials .background .first {
+  background-color: var(--main-color);
+}
+/* End Features */
+
+/* Start Contact Us */
+#contactUs h2 {
+  color: var(--main-color);
+}
+#contactUs form input:not([type="submit"]):focus,
+#contactUs form textarea:focus {
+  box-shadow: 0 0 0 1px var(--main-color);
+}
+#contactUs form input[type="submit"] {
+  background-color: var(--main-color);
+}
+/* End Contact Us */
